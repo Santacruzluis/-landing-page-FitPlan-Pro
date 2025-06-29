@@ -53,7 +53,7 @@ const nextConfig = {
   // Configuración experimental
   experimental: {
     // Optimizaciones para producción
-    optimizeCss: true,
+    optimizeCss: false,
     scrollRestoration: true,
   },
 
