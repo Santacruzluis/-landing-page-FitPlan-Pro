@@ -34,7 +34,7 @@ import {
   Loader2,
 } from "lucide-react";
 import Link from "next/link";
-import { workoutsApi, aiApi, WorkoutSession } from "@/lib/api";
+import { workoutsApi, aiApi, WorkoutSession } from "../../lib/api";
 import { toast } from "sonner";
 
 export default function DashboardPage() {

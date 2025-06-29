@@ -29,8 +29,8 @@ import {
   Loader2,
 } from "lucide-react";
 import Link from "next/link";
-import { exercisesApi, Exercise } from "@/lib/api";
-import { aiApi } from "@/lib/api";
+import { exercisesApi, Exercise } from "../../../lib/api";
+import { aiApi } from "../../../lib/api";
 
 export default function ExercisesPage() {
   const [selectedMuscle, setSelectedMuscle] = useState("all");

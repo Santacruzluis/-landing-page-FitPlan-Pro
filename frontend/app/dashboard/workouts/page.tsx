@@ -38,7 +38,7 @@ import {
   workoutsApi,
   WorkoutSession,
   CreateWorkoutSessionDto,
-} from "@/lib/api";
+} from "../../../lib/api";
 import { toast } from "sonner";
 
 export default function WorkoutsPage() {
