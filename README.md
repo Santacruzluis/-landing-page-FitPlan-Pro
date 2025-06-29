@@ -205,32 +205,6 @@ yarn seed
 - La aplicación funciona sin IA
 - Usar recomendaciones predefinidas
 
-## 📊 Estado del Proyecto
-
-### ✅ Completado
-- [x] Backend completo con NestJS
-- [x] Frontend con Next.js y TypeScript
-- [x] Base de datos PostgreSQL con TypeORM
-- [x] CRUD completo para rutinas y ejercicios
-- [x] Integración con IA (opcional)
-- [x] Calculadora nutricional
-- [x] Interfaz responsive y moderna
-- [x] Manejo de estados vacíos
-- [x] Datos de ejemplo
-- [x] Documentación completa
-
-### 🔄 En Desarrollo
-- [ ] Autenticación de usuarios
-- [ ] Más ejercicios en la biblioteca
-- [ ] Estadísticas avanzadas
-- [ ] Exportación de datos
-
-### 🚀 Próximas Funcionalidades
-- [ ] Aplicación móvil
-- [ ] Integración con wearables
-- [ ] Comunidad de usuarios
-- [ ] Planes premium
-
 ## 📄 Licencia
 
 Este proyecto es parte de una prueba técnica y está diseñado para demostrar habilidades de desarrollo full-stack.
@@ -243,3 +217,21 @@ Desarrollado con ❤️ para demostrar capacidades en:
 - Manejo de bases de datos
 - Implementación de IA
 - Diseño de UX/UI
+
+## 🟣 Comportamiento de los datos en el backend
+
+### Modo híbrido: datos reales y datos de ejemplo
+
+- **Si hay rutinas guardadas en la base de datos:**  
+  El endpoint `/workouts/sessions` devuelve los datos reales de la base de datos y la aplicación muestra solo tus rutinas reales.
+
+- **Si la base de datos está vacía o no está conectada:**  
+  El endpoint devuelve datos de ejemplo (mock) para que la aplicación siempre funcione y se vea bien, incluso en modo demo o desarrollo.
+
+- **Transición automática:**  
+  No necesitas cambiar nada en el código. Cuando guardes rutinas reales, el sistema dejará de mostrar los datos de ejemplo y solo mostrará tus rutinas reales.
+
+### Ventajas
+- Siempre hay algo que mostrar en la interfaz, incluso en modo demo.
+- Ideal para pruebas, presentaciones y desarrollo sin base de datos.
+- Cuando conectes la base de datos y guardes rutinas reales, la app se adapta automáticamente.
