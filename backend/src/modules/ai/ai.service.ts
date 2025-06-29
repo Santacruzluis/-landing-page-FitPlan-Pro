@@ -2,10 +2,10 @@ import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import OpenAI from "openai";
 
-import { User, UserLevel } from "@/entities/user.entity";
-import { UsersService } from "@/modules/users/users.service";
-import { ExercisesService } from "@/modules/exercises/exercises.service";
-import { ExerciseLevel } from "@/entities/exercise.entity";
+import { User, UserLevel } from "../../entities/user.entity";
+import { UsersService } from "../../modules/users/users.service";
+import { ExercisesService } from "../../modules/exercises/exercises.service";
+import { ExerciseLevel } from "../../entities/exercise.entity";
 
 @Injectable()
 export class AiService {

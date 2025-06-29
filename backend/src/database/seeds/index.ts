@@ -1,17 +1,17 @@
 import { DataSource } from "typeorm";
 import { ConfigService } from "@nestjs/config";
-import { DatabaseConfig } from "@/config/database.config";
+import { DatabaseConfig } from "../../config/database.config";
 import {
   Exercise,
   MuscleGroup,
   ExerciseLevel,
   EquipmentType,
-} from "@/entities/exercise.entity";
-import { WorkoutPlan, WorkoutType } from "@/entities/workout-plan.entity";
+} from "../../entities/exercise.entity";
+import { WorkoutPlan, WorkoutType } from "../../entities/workout-plan.entity";
 import {
   WorkoutSession,
   SessionStatus,
-} from "@/entities/workout-session.entity";
+} from "../../entities/workout-session.entity";
 
 async function seed() {
   const configService = new ConfigService();

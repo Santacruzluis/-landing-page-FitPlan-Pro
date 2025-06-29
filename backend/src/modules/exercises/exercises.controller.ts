@@ -20,7 +20,7 @@ import {
 import { ExercisesService } from "./exercises.service";
 import { CreateExerciseDto } from "./dto/create-exercise.dto";
 import { UpdateExerciseDto } from "./dto/update-exercise.dto";
-import { Exercise } from "@/entities/exercise.entity";
+import { Exercise } from "../../entities/exercise.entity";
 
 @ApiTags("exercises")
 @Controller("exercises")

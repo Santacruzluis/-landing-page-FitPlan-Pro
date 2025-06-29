@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger"
 import { IsString, IsEnum, IsOptional, IsArray, IsNumber } from "class-validator"
-import { MuscleGroup, ExerciseLevel, EquipmentType } from "@/entities/exercise.entity"
+import { MuscleGroup, ExerciseLevel, EquipmentType } from "../../../entities/exercise.entity"
 
 export class CreateExerciseDto {
   @ApiProperty()

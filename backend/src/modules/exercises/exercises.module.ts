@@ -3,7 +3,7 @@ import { TypeOrmModule } from "@nestjs/typeorm"
 
 import { ExercisesController } from "./exercises.controller"
 import { ExercisesService } from "./exercises.service"
-import { Exercise } from "@/entities/exercise.entity"
+import { Exercise } from "../../entities/exercise.entity"
 
 @Module({
   imports: [TypeOrmModule.forFeature([Exercise])],

@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from "@nestjs/common"
 import { InjectRepository } from "@nestjs/typeorm"
 import { Repository } from "typeorm"
 
-import { Exercise, ExerciseLevel } from "@/entities/exercise.entity"
+import { Exercise, ExerciseLevel } from "../../entities/exercise.entity"
 import { CreateExerciseDto } from "./dto/create-exercise.dto"
 import { UpdateExerciseDto } from "./dto/update-exercise.dto"
 

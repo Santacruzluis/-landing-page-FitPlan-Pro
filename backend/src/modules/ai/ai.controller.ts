@@ -10,7 +10,7 @@ import {
 import { ApiTags, ApiOperation, ApiBearerAuth } from "@nestjs/swagger";
 
 import { AiService } from "./ai.service";
-import { JwtAuthGuard } from "@/modules/auth/guards/jwt-auth.guard";
+import { JwtAuthGuard } from "../../modules/auth/guards/jwt-auth.guard";
 
 @ApiTags("ai")
 @Controller("ai")

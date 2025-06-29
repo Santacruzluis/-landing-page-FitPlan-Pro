@@ -3,7 +3,7 @@ import { TypeOrmModule } from "@nestjs/typeorm"
 
 import { ProgressController } from "./progress.controller"
 import { ProgressService } from "./progress.service"
-import { UserProgress } from "@/entities/user-progress.entity"
+import { UserProgress } from "../../entities/user-progress.entity"
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserProgress])],

@@ -1,25 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+} from "../../../components/ui/card";
+import { Badge } from "../../../components/ui/badge";
+import { Input } from "../../../components/ui/input";
+import { Label } from "../../../components/ui/label";
+import { Textarea } from "../../../components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../../components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -27,7 +27,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../../components/ui/dialog";
 import {
   Calendar,
   Dumbbell,
