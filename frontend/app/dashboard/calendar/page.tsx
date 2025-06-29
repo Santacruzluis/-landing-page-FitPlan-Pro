@@ -42,6 +42,7 @@ import {
   Minus,
   Plus as AddIcon,
   Loader2,
+  Dumbbell,
 } from "lucide-react";
 import Link from "next/link";
 import {
