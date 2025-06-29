@@ -20,8 +20,7 @@ export class DatabaseConfig implements TypeOrmOptionsFactory {
         type: "postgres",
         url: databaseUrl,
         entities: ["dist/**/*.entity.js"],
-        migrations: ["dist/migrations/*.js"],
-        synchronize: false, // Nunca usar en producción
+        synchronize: true, // Usar synchronize en lugar de migraciones
         logging: !isProduction,
         ssl: isProduction ? { rejectUnauthorized: false } : false,
         extra: isProduction
@@ -43,8 +42,7 @@ export class DatabaseConfig implements TypeOrmOptionsFactory {
       password: this.configService.get("DATABASE_PASSWORD", "password"),
       database: this.configService.get("DATABASE_NAME", "fitplan_pro"),
       entities: ["dist/**/*.entity.js"],
-      migrations: ["dist/migrations/*.js"],
-      synchronize: this.configService.get("NODE_ENV") === "development",
+      synchronize: true, // Usar synchronize en lugar de migraciones
       logging: this.configService.get("NODE_ENV") === "development",
       ssl: false,
     };

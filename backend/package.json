@@ -26,7 +26,7 @@
     "db:seed": "yarn ts-node src/database/seeds/index.ts",
     "db:reset": "yarn migration:revert && yarn migration:run && yarn db:seed",
     "render:build": "yarn install && yarn build:prod",
-    "render:start": "yarn migration:run && yarn start:prod",
+    "render:start": "yarn start:prod",
     "seed": "ts-node src/database/seeds/index.ts"
   },
   "dependencies": {
