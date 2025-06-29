@@ -1,12 +1,30 @@
 services:
+  # Frontend Service
+  - type: web
+    name: fitplan-pro-frontend
+    env: node
+    plan: free
+    buildCommand: cd frontend && yarn install && yarn build
+    startCommand: cd frontend && yarn start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        value: https://fitplan-pro-backend.onrender.com/api/v1
+      - key: NEXT_PUBLIC_APP_NAME
+        value: FitPlan Pro
+      - key: NEXT_PUBLIC_APP_VERSION
+        value: 1.0.0
+    healthCheckPath: /
+    autoDeploy: true
+
   # Backend Service
   - type: web
     name: fitplan-pro-backend
     env: node
-    plan: starter
-    rootDir: backend
-    buildCommand: yarn render:build
-    startCommand: yarn render:start
+    plan: free
+    buildCommand: cd backend && yarn install && yarn build
+    startCommand: cd backend && yarn render:start
     envVars:
       - key: NODE_ENV
         value: production
@@ -23,26 +41,10 @@ services:
       - key: CORS_ORIGINS
         value: https://fitplan-pro-frontend.onrender.com
     healthCheckPath: /api/v1/health
-
-  # Frontend Service
-  - type: web
-    name: fitplan-pro-frontend
-    env: node
-    plan: starter
-    rootDir: frontend
-    buildCommand: yarn render:build
-    startCommand: yarn start
-    envVars:
-      - key: NEXT_PUBLIC_API_URL
-        value: https://fitplan-pro-backend.onrender.com/api/v1
-      - key: NEXT_PUBLIC_APP_NAME
-        value: FitPlan Pro
-      - key: NEXT_PUBLIC_APP_VERSION
-        value: 1.0.0
-    healthCheckPath: /
+    autoDeploy: true
 
 databases:
   - name: fitplan-pro-db
     databaseName: fitplan_pro
     user: fitplan_user
-    plan: starter
+    plan: free
