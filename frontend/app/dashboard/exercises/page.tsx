@@ -35,6 +35,9 @@ import {
   Crown,
   Flame,
   Zap as Lightning,
+  Brain,
+  Sparkles,
+  Loader2,
 } from "lucide-react";
 import Link from "next/link";
 import {
