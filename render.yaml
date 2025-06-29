@@ -4,9 +4,8 @@ services:
     name: fitplan-pro-frontend
     env: node
     plan: free
-    rootDir: frontend
-    buildCommand: yarn render:build
-    startCommand: yarn render:start
+    buildCommand: cd frontend && yarn install && yarn build
+    startCommand: cd frontend && yarn start
     envVars:
       - key: NODE_ENV
         value: production
