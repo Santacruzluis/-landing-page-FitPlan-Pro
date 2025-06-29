@@ -25,7 +25,7 @@ services:
     env: node
     plan: free
     rootDir: backend
-    buildCommand: yarn install && yarn build
+    buildCommand: yarn render:build
     startCommand: yarn render:start
     envVars:
       - key: NODE_ENV
