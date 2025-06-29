@@ -45,8 +45,3 @@ services:
     healthCheckPath: /api/v1/health
     autoDeploy: true
 
-databases:
-  - name: fitplan-pro-db
-    databaseName: fitplan_pro
-    user: fitplan_user
-    plan: free
