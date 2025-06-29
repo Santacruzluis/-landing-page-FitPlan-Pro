@@ -70,8 +70,8 @@ export default function DashboardPage() {
       // Actualizar días completados basado en las sesiones
       if (sessions && sessions.length > 0) {
         const completed = sessions.map((session) => {
-          // Usar completedAt si existe, sino scheduledDate
-          const date = new Date(session.completedAt || session.scheduledDate);
+          // Usar endTime si existe, sino scheduledDate
+          const date = new Date(session.endTime || session.scheduledDate);
           const days = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
           return days[date.getDay()];
         });

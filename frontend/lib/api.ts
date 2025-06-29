@@ -159,7 +159,9 @@ export const exercisesApi = {
   },
 
   search: async (query: string): Promise<Exercise[]> => {
-    const response = await api.get(`/exercises/search?q=${encodeURIComponent(query)}`);
+    const response = await api.get(
+      `/exercises/search?q=${encodeURIComponent(query)}`
+    );
     return response.data;
   },
 
@@ -183,7 +185,10 @@ export const exercisesApi = {
     return response.data;
   },
 
-  update: async (id: string, exercise: UpdateExerciseDto): Promise<Exercise> => {
+  update: async (
+    id: string,
+    exercise: UpdateExerciseDto
+  ): Promise<Exercise> => {
     const response = await api.patch(`/exercises/${id}`, exercise);
     return response.data;
   },
@@ -204,18 +209,25 @@ export const workoutsApi = {
     return response.data;
   },
 
-  createSession: async (session: CreateWorkoutSessionDto): Promise<WorkoutSession> => {
+  createSession: async (
+    session: CreateWorkoutSessionDto
+  ): Promise<WorkoutSession> => {
     const response = await api.post("/workouts/sessions", session);
     return response.data;
   },
 
   // Método de prueba que no usa base de datos
-  createTestSession: async (session: CreateWorkoutSessionDto): Promise<WorkoutSession> => {
+  createTestSession: async (
+    session: CreateWorkoutSessionDto
+  ): Promise<WorkoutSession> => {
     const response = await api.post("/workouts/sessions/test-session", session);
     return response.data;
   },
 
-  updateSession: async (id: string, session: UpdateWorkoutSessionDto): Promise<WorkoutSession> => {
+  updateSession: async (
+    id: string,
+    session: UpdateWorkoutSessionDto
+  ): Promise<WorkoutSession> => {
     const response = await api.patch(`/workouts/sessions/${id}`, session);
     return response.data;
   },
@@ -259,7 +271,11 @@ export const aiApi = {
     return response.data;
   },
 
-  getExerciseSuggestions: async (muscleGroup: string, level: string, equipment?: string): Promise<any> => {
+  getExerciseSuggestions: async (
+    muscleGroup: string,
+    level: string,
+    equipment?: string
+  ): Promise<any> => {
     const response = await api.get("/ai/exercise-suggestions", {
       params: { muscleGroup, level, equipment },
     });

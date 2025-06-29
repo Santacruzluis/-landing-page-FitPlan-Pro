@@ -37,7 +37,7 @@ export class WorkoutsController {
       const completedSession = {
         id: "completed-" + Date.now(),
         status: "completed",
-        completedAt: new Date().toISOString(),
+        endTime: new Date().toISOString(),
         muscle: dto.notes?.includes(":")
           ? dto.notes.split(":")[1]?.trim()
           : "Entrenamiento",
@@ -82,7 +82,7 @@ export class WorkoutsController {
           id: "session-1",
           muscle: "Pecho y Tríceps",
           duration: 45,
-          completedAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(), // Ayer
+          endTime: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(), // Ayer
           scheduledDate: new Date(
             Date.now() - 24 * 60 * 60 * 1000
           ).toISOString(),
@@ -92,9 +92,7 @@ export class WorkoutsController {
           id: "session-2",
           muscle: "Espalda y Bíceps",
           duration: 50,
-          completedAt: new Date(
-            Date.now() - 2 * 24 * 60 * 60 * 1000
-          ).toISOString(), // Hace 2 días
+          endTime: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // Hace 2 días
           scheduledDate: new Date(
             Date.now() - 2 * 24 * 60 * 60 * 1000
           ).toISOString(),
@@ -104,9 +102,7 @@ export class WorkoutsController {
           id: "session-3",
           muscle: "Piernas",
           duration: 60,
-          completedAt: new Date(
-            Date.now() - 3 * 24 * 60 * 60 * 1000
-          ).toISOString(), // Hace 3 días
+          endTime: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // Hace 3 días
           scheduledDate: new Date(
             Date.now() - 3 * 24 * 60 * 60 * 1000
           ).toISOString(),
