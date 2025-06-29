@@ -5,8 +5,8 @@ services:
     env: node
     plan: free
     rootDir: frontend
-    buildCommand: yarn install && yarn build
-    startCommand: yarn start
+    buildCommand: yarn render:build
+    startCommand: yarn render:start
     envVars:
       - key: NODE_ENV
         value: production
@@ -45,3 +45,8 @@ services:
     healthCheckPath: /api/v1/health
     autoDeploy: true
 
+databases:
+  - name: fitplan-pro-db
+    databaseName: fitplan_pro
+    user: fitplan_user
+    plan: free

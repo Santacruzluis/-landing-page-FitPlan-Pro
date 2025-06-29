@@ -1,20 +1,33 @@
 import { DataSource } from "typeorm";
-import { ConfigService } from "@nestjs/config";
+import { config } from "dotenv";
 
-const configService = new ConfigService();
+// Cargar variables de entorno
+config();
 
-const dataSourceConfig = {
-  type: "postgres" as const,
-  host: configService.get("DATABASE_HOST", "localhost"),
-  port: configService.get("DATABASE_PORT", 5432),
-  username: configService.get("DATABASE_USERNAME", "postgres"),
-  password: configService.get("DATABASE_PASSWORD", "password"),
-  database: configService.get("DATABASE_NAME", "fitplan_pro"),
+const isProduction = process.env.NODE_ENV === "production";
+
+export const AppDataSource = new DataSource({
+  type: "postgres",
+  url: process.env.DATABASE_URL,
   entities: ["dist/**/*.entity.js"],
   migrations: ["dist/migrations/*.js"],
-  synchronize: configService.get("NODE_ENV") === "development",
-  logging: configService.get("NODE_ENV") === "development",
-  ssl: false,
-};
+  synchronize: false,
+  logging: !isProduction,
+  ssl: isProduction ? { rejectUnauthorized: false } : false,
+  extra: isProduction
+    ? {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      }
+    : {},
+});
 
-export default new DataSource(dataSourceConfig);
+// Inicializar la conexión
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Data Source has been initialized!");
+  })
+  .catch((err) => {
+    console.error("Error during Data Source initialization", err);
+  });
