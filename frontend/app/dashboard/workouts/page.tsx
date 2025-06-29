@@ -3,6 +3,33 @@
 import { useState, useEffect } from "react";
 import { Button } from "../../../components/ui/button";
 import {
+  Dumbbell,
+  Plus,
+  Calendar,
+  Clock,
+  Target,
+  TrendingUp,
+  Edit,
+  Trash2,
+  Play,
+  Pause,
+  CheckCircle,
+  X,
+  ChevronRight,
+  ChevronLeft,
+  BarChart3,
+  Users,
+  Activity,
+  Zap,
+  Search,
+  Filter,
+  SortAsc,
+  SortDesc,
+  PlayCircle,
+  Loader2,
+} from "lucide-react";
+import Link from "next/link";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -11,6 +38,18 @@ import {
 } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
 import { Input } from "../../../components/ui/input";
+import { Progress } from "../../../components/ui/progress";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../components/ui/tabs";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "../../../components/ui/avatar";
 import {
   Dialog,
   DialogContent,
@@ -21,19 +60,6 @@ import {
 } from "../../../components/ui/dialog";
 import { Label } from "../../../components/ui/label";
 import { Textarea } from "../../../components/ui/textarea";
-import {
-  Dumbbell,
-  Calendar,
-  Clock,
-  Target,
-  Plus,
-  Edit,
-  Trash2,
-  Loader2,
-  CheckCircle,
-  PlayCircle,
-} from "lucide-react";
-import Link from "next/link";
 import {
   workoutsApi,
   WorkoutSession,

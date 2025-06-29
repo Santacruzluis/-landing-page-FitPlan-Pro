@@ -3,6 +3,41 @@
 import { useState, useEffect } from "react";
 import { Button } from "../../../components/ui/button";
 import {
+  Dumbbell,
+  Plus,
+  Search,
+  Filter,
+  Target,
+  TrendingUp,
+  Edit,
+  Trash2,
+  Play,
+  Eye,
+  Heart,
+  Share,
+  Download,
+  Upload,
+  Settings,
+  BarChart3,
+  Users,
+  Activity,
+  Zap,
+  SortAsc,
+  SortDesc,
+  Grid,
+  List,
+  BookOpen,
+  Clock,
+  Star,
+  Award,
+  Trophy,
+  Medal,
+  Crown,
+  Flame,
+  Zap as Lightning,
+} from "lucide-react";
+import Link from "next/link";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -11,6 +46,18 @@ import {
 } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
 import { Input } from "../../../components/ui/input";
+import { Progress } from "../../../components/ui/progress";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../components/ui/tabs";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "../../../components/ui/avatar";
 import {
   Select,
   SelectContent,
@@ -18,17 +65,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../components/ui/select";
-import {
-  Brain,
-  Dumbbell,
-  Search,
-  Sparkles,
-  Target,
-  Clock,
-  BarChart3,
-  Loader2,
-} from "lucide-react";
-import Link from "next/link";
 import { exercisesApi, Exercise } from "../../../lib/api";
 import { aiApi } from "../../../lib/api";
 
@@ -115,7 +151,7 @@ export default function ExercisesPage() {
         selectedMuscle !== "all" ? selectedMuscle : "chest",
         selectedLevel !== "all" ? selectedLevel : "beginner"
       );
-      
+
       if (suggestions.suggestions) {
         setAiSuggestions(suggestions.suggestions);
       } else {
@@ -285,10 +321,11 @@ export default function ExercisesPage() {
               No hay ejercicios disponibles
             </h2>
             <p className="text-gray-500 dark:text-gray-300 mb-8 max-w-md mx-auto">
-              La biblioteca de ejercicios está vacía. Contacta al administrador para agregar ejercicios.
+              La biblioteca de ejercicios está vacía. Contacta al administrador
+              para agregar ejercicios.
             </p>
-            
-            <Button 
+
+            <Button
               onClick={loadExercises}
               className="bg-purple-600 hover:bg-purple-700"
             >

@@ -3,6 +3,47 @@
 import { useState, useEffect } from "react";
 import { Button } from "../../../components/ui/button";
 import {
+  Calendar as CalendarIcon,
+  Plus,
+  Search,
+  Filter,
+  Target,
+  TrendingUp,
+  Edit,
+  Trash2,
+  Play,
+  Eye,
+  Heart,
+  Share,
+  Download,
+  Upload,
+  Settings,
+  BarChart3,
+  Users,
+  Activity,
+  Zap,
+  SortAsc,
+  SortDesc,
+  Grid,
+  List,
+  BookOpen,
+  Clock,
+  Star,
+  Award,
+  Trophy,
+  Medal,
+  Crown,
+  Flame,
+  Zap as Lightning,
+  ChevronLeft,
+  ChevronRight,
+  CheckCircle,
+  X,
+  Minus,
+  Plus as AddIcon,
+} from "lucide-react";
+import Link from "next/link";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -13,6 +54,24 @@ import { Badge } from "../../../components/ui/badge";
 import { Input } from "../../../components/ui/input";
 import { Label } from "../../../components/ui/label";
 import { Textarea } from "../../../components/ui/textarea";
+import { Progress } from "../../../components/ui/progress";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../components/ui/tabs";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "../../../components/ui/avatar";
+import { Calendar } from "../../../components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../../../components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -28,18 +87,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../../../components/ui/dialog";
-import {
-  Calendar,
-  Dumbbell,
-  Plus,
-  Edit,
-  Trash2,
-  Loader2,
-  CheckCircle,
-  PlayCircle,
-  Clock,
-} from "lucide-react";
-import Link from "next/link";
 import {
   workoutsApi,
   WorkoutSession,
@@ -162,14 +209,14 @@ export default function CalendarPage() {
       case "in_progress":
         return (
           <Badge className="bg-blue-100 dark:bg-blue-600/20 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-600/30">
-            <PlayCircle className="mr-1 h-3 w-3" />
+            <Play className="mr-1 h-3 w-3" />
             En Progreso
           </Badge>
         );
       case "planned":
         return (
           <Badge className="bg-yellow-100 dark:bg-yellow-600/20 text-yellow-800 dark:text-yellow-300 border-yellow-200 dark:border-yellow-600/30">
-            <Calendar className="mr-1 h-3 w-3" />
+            <CalendarIcon className="mr-1 h-3 w-3" />
             Planificada
           </Badge>
         );
@@ -306,7 +353,7 @@ export default function CalendarPage() {
           <div className="flex items-center justify-between mb-8">
             <div>
               <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
-                <Calendar className="mr-3 h-10 w-10 text-purple-400" />
+                <CalendarIcon className="mr-3 h-10 w-10 text-purple-400" />
                 Planificador de Rutinas
               </h1>
               <p className="text-slate-600 dark:text-gray-300 text-lg">
@@ -318,7 +365,7 @@ export default function CalendarPage() {
           {/* Empty State */}
           <div className="text-center py-20">
             <div className="w-24 h-24 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Calendar className="h-12 w-12 text-purple-400" />
+              <CalendarIcon className="h-12 w-12 text-purple-400" />
             </div>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
               No tienes rutinas programadas esta semana
@@ -463,7 +510,7 @@ export default function CalendarPage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
-              <Calendar className="mr-3 h-10 w-10 text-purple-400" />
+              <CalendarIcon className="mr-3 h-10 w-10 text-purple-400" />
               Planificador de Rutinas
             </h1>
             <p className="text-slate-600 dark:text-gray-300 text-lg">

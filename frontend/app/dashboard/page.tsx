@@ -3,6 +3,26 @@
 import { useState, useEffect, useMemo } from "react";
 import { Button } from "../../components/ui/button";
 import {
+  Dumbbell,
+  Sun,
+  Moon,
+  Calendar,
+  Target,
+  TrendingUp,
+  Clock,
+  CheckCircle,
+  Play,
+  Plus,
+  X,
+  ChevronRight,
+  ChevronLeft,
+  BarChart3,
+  Users,
+  Activity,
+  Zap,
+} from "lucide-react";
+import Link from "next/link";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -10,6 +30,18 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
+import { Progress } from "../../components/ui/progress";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../components/ui/tabs";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "../../components/ui/avatar";
 import {
   Dialog,
   DialogContent,
@@ -21,19 +53,6 @@ import {
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { Textarea } from "../../components/ui/textarea";
-import {
-  Calendar,
-  Dumbbell,
-  Calculator,
-  Brain,
-  ChevronRight,
-  Sun,
-  Moon,
-  Edit,
-  Sparkles,
-  Loader2,
-} from "lucide-react";
-import Link from "next/link";
 import { workoutsApi, aiApi, WorkoutSession } from "../../lib/api";
 import { toast } from "sonner";
 
